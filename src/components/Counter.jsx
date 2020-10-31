@@ -2,10 +2,6 @@ import React from "react";
 import {Header} from "./Header";
 
 class Counter extends React.Component {
-  state = {
-    score: 0,
-    a: 3
-  }
 
   constructor(props) {
     super(props);
@@ -31,7 +27,7 @@ class Counter extends React.Component {
         <button className='counter-action decrement'
                 onClick={() => this.changeScore(-1)}> -
         </button>
-        <span className='counter-score'>{this.state.score}</span>
+        <span className='counter-score'>{this.props.score}</span>
         <button className='counter-action increment'
                 onClick={() => this.changeScore(1)}> +
         </button>
