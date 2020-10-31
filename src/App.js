@@ -23,6 +23,10 @@ class App extends React.Component {
     })
   }
 
+  handleChangeScore = (delta, id) => {
+    console.log('handleChangeScore:', delta, id);
+  }
+
   render() {
     return (
       <div className='scoreboard'>
@@ -30,8 +34,10 @@ class App extends React.Component {
 
         {
           this.state.players.map(player => (
-            <Player name={player.name} key={player.id} id={player.id}
+            <Player name={player.name} key={player.id}
+                    id={player.id}
                     score={player.score}
+                    changeScore={this.handleChangeScore}
                     removePlayer={this.handleRemovePlayer} />
           ))
         }
